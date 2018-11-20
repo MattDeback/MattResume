@@ -5,8 +5,10 @@ import './navbar.css';
 class Navbar extends React.Component {
   render() {
     return (
-      <div className="Navbar">
-        <h5>Navbar</h5>
+      <div className="navbar">
+
+        <h5>test de navbar</h5>
+
       </div>
     );
   }

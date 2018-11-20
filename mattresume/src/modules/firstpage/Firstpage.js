@@ -7,7 +7,7 @@ import Navbar from "../navbar/Navbar";
 class Firstpage extends React.Component {
   render() {
     return (
-      <div className="Navbar">
+      <div className="wholepage">
       <Navbar />
         <h5>Firstpage</h5>
       </div>
