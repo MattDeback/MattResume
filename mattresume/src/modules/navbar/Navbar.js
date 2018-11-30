@@ -17,10 +17,10 @@ class Navbar extends React.Component {
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Work experience</a>
+        <a class="nav-link" href="javascript:void(0)">Resume</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Travels</a>
+        <a class="nav-link" href="#">Places I visited</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
