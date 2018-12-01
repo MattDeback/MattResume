@@ -2,21 +2,27 @@
 .container{width:100%; height:100%; position:absolute; background:linear-gradient(#1A76BE,#0063B1);} */
 
 .snow{
-  background:rgb(43, 32, 65);
-  background-image:  url('snow11.png'), url('snow22.png'), url('snow4.png');
-  animation: snow 70s linear infinite;
-  animation-direction: reverse;
+  background:rgb(35, 29, 58);
+  background-image: url('snow3.png');
+  animation: snow 200s linear infinite;
+  animation-direction: normal;
 }
 
-/* .snow2{
-  background:rgb(43, 32, 65);
-  background-image: url('snow22.png');
+.snow2{
+  background:rgb(35, 29, 58);
+  background-image: url('snow1.png'), url('snow2.png');
   animation: snow 100s linear infinite;
   animation-direction: reverse;
-} */
+  opacity: 0.7;
+}
 
 
 @keyframes snow {
+ 0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@keyframes snow2 {
  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
  100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
 }
@@ -34,6 +40,16 @@ font-style: normal;
   justify-content: center;
 }
 
-.space {
-  margin-top: 100px;
+
+.fill {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: fixed;
 }
+
+/* .space {
+  margin-top: 100px;
+} */
