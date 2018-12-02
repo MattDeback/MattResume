@@ -14,6 +14,22 @@ class Firstpage extends React.Component {
       <div class="snow2 fill">
       <Navbar />
 
+      <div class="page">
+      <div class="element">
+      <p class="text">
+      Hi! Welcome to my online resume!<br/>
+      My name is Matt! <br/>
+      Enjoy your visit on this website!
+      </p>
+
+      <img src={curly} className="profileimg" alt=""/>
+
+
+
+
+      </div>
+      </div>
+
 
 
 
