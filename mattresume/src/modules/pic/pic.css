@@ -1,0 +1,43 @@
+.snow{
+  background:rgb(35, 29, 58);
+  background-image: url('snow3.png');
+  animation: snow 200s linear infinite;
+  animation-direction: normal;
+  z-index: 1;
+}
+
+.snow2{
+  background:rgb(35, 29, 58);
+  background-image: url('snow1.png'), url('snow2.png');
+  animation: snow 100s linear infinite;
+  animation-direction: reverse;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+
+@keyframes snow {
+ 0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@keyframes snow2 {
+ 0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+ 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+.fill {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: fixed;
+}
+
+.profileimg {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      z-index: 3;
+  }

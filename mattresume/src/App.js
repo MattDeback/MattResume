@@ -6,6 +6,7 @@ import './App.css';
 //modules
 import Navbar from "./modules/navbar/Navbar";
 import Firstpage from "./modules/firstpage/Firstpage";
+import Pic from "./modules/pic/Pic";
 
 
 //App
@@ -16,6 +17,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Firstpage} />
           <Route path="/navbar" component={Navbar} />
+          <Route path="/pic" component={Pic} />
         </div>
       </Router>
     );
