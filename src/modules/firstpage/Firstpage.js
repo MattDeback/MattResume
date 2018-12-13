@@ -17,7 +17,7 @@ class Firstpage extends React.Component {
       <div class="page">
       <div class="element">
       <p class="text">
-      Hi! Welcome to my online resume!<br/>
+      TEST Hi! Welcome to my online resume!<br/>
       My name is Matt! <br/>
       Enjoy your visit on this website!
       </p>
