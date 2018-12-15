@@ -28,6 +28,7 @@ class Firstpage extends React.Component {
             </div>
           </div>
         </div>
+
       </div>
 
     );
