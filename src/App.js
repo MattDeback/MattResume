@@ -4,8 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 
 //modules
-import Navbar from "./modules/navbar/Navbar";
 import Firstpage from "./modules/firstpage/Firstpage";
+import Navbar from "./modules/navbar/Navbar";
+import Travel from "./modules/travel/Travel";
+
 
 
 //App
@@ -16,6 +18,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Firstpage} />
           <Route path="/navbar" component={Navbar} />
+          <Route path="/travel" component={Travel} />
         </div>
       </Router>
     );

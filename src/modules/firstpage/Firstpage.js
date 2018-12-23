@@ -42,17 +42,17 @@ class Firstpage extends React.Component {
               </div>
 
 
-                <div class="row">
-                  <div class="col-sm">
-                    <img src={music} className="profileimg" alt=""/>
-                  </div>
-                  <div class="col-sm">
-                    <img src={fleur} className="profileimg" alt=""/>
-                  </div>
-                  <div class="col-sm">
-                    <img src={contact} className="profileimg" alt=""/>
-                  </div>
+              <div class="row">
+                <div class="col-sm">
+                  <img src={music} className="profileimg" alt=""/>
                 </div>
+                <div class="col-sm">
+                  <img src={fleur} className="profileimg" alt=""/>
+                </div>
+                <div class="col-sm">
+                  <img src={contact} className="profileimg" alt=""/>
+                </div>
+              </div>
 
                 <div>
                 <h6>TEST for SPACE </h6>

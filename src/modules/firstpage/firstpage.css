@@ -17,9 +17,6 @@
 .page {
   display: flex;
   justify-content: center;
-  /* margin-left: 3px;
-  margin-right: 3px;
-  margin-top: 5px; */
 }
 
 .text {
