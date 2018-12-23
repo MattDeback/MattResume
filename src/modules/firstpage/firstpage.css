@@ -28,9 +28,43 @@
   font-style: normal;
 }
 
+.text2 {
+  color: white;
+  font-family: '8BITWONDERNominal';
+  font-weight: small;
+  font-style: normal;
+  margin-top:25px;
+}
+
+.btn {
+  margin-bottom: 20px;
+}
+
+.textitle {
+  color: red;
+  font-family: '8BITWONDERNominal';
+  font-weight: small;
+  font-style: normal;
+}
+
+.textred {
+  color: red;
+  font-family: '8BITWONDERNominal';
+  font-weight: small;
+  font-style: normal;
+}
+
 .flex {
   display: flex;
   justify-content: center;
+}
+
+.jumbotron {
+  background: none;
+}
+
+.line {
+  border-color: white;
 }
 
 

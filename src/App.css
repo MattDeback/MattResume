@@ -2,7 +2,7 @@
 .snow{
   background:rgb(21, 16, 43);
   background-image: url('images/background/snow1.png'), url('images/background/snow2.png');
-  animation: snow 200s linear infinite;
+  animation: snow 150s linear infinite;
   animation-direction: reverse;
   position: absolute;
   opacity: 0.9;
@@ -15,8 +15,8 @@
 .snow2{
   background:rgb(35, 29, 58);
   background-image: url('images/background/snow3.png');
-  animation: snow 100s linear infinite;
-  animation-direction: reverse;
+  animation: snow 200s linear infinite;
+  animation-direction: normal;
   position: absolute;
   opacity: 0.3;
   top: 0;
@@ -27,9 +27,9 @@
 
 
 @keyframes snow {
- 0% {background-position:  0 0;}
- 100% {background-position: 100% 100%;}
-}
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+ }
 
 @keyframes snow2 {
  0% {background-position: 0 0;}
