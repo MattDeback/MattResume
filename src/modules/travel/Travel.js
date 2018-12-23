@@ -1,19 +1,17 @@
 import React from 'react';
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import './travel.css';
 
 import Navbar from "../navbar/Navbar";
 
-
 const photos = [
   {
-    src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+    src: "./images/NY.jpg",
     width: 4,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+    src: "./images/time.jpg",
     width: 1,
     height: 1
   },
@@ -103,16 +101,6 @@ class Travel extends React.Component {
         <Navbar />
 
         <Gallery photos={photos} direction={"column"} />
-
-
-
-
-
-
-
-
-
-
 
 
         </div>
