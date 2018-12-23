@@ -4,6 +4,9 @@ import './firstpage.css';
 import Navbar from "../navbar/Navbar";
 
 let curly = require ("./images/curly.jpg")
+let fleur = require ("./images/fleur.png")
+let contact = require ("./images/contact.png")
+let music = require ("./images/music.png")
 
 class Firstpage extends React.Component {
   render() {
@@ -39,11 +42,22 @@ class Firstpage extends React.Component {
               </div>
 
 
-              <p class="text">
-                Welcome to my online resume!<br/>
-                My name is Matt! <br/>
-                Enjoy your visit on this website!
-              </p>
+                <div class="row">
+                  <div class="col-sm">
+                    <img src={music} className="profileimg" alt=""/>
+                  </div>
+                  <div class="col-sm">
+                    <img src={fleur} className="profileimg" alt=""/>
+                  </div>
+                  <div class="col-sm">
+                    <img src={contact} className="profileimg" alt=""/>
+                  </div>
+                </div>
+
+                <div>
+                <h6>TEST for SPACE </h6>
+                </div>
+
 
               <img src={curly} className="profileimg" alt=""/>
 
