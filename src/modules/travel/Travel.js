@@ -95,12 +95,12 @@ class Travel extends React.Component {
 
       <div>
 
-      <div class="snow">&nbsp;</div>
-      <div class="snow2">&nbsp;</div>
-      <div class="fill">
-        <Navbar />
+        <div class="snow">&nbsp;</div>
+        <div class="snow2">&nbsp;</div>
+        <div class="fill">
+          <Navbar />
 
-        <Gallery photos={photos} direction={"column"} />
+          <Gallery photos={photos} direction={"column"} />
 
 
         </div>
