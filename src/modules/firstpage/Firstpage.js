@@ -43,13 +43,13 @@ class Firstpage extends React.Component {
 
 
               <div class="row">
-                <div class="col-sm">
+                <div class="col-sm" align="center">
                   <img src={music} className="imgfirstpage" alt=""/>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" align="center">
                   <img src={fleur} className="imgfirstpage" alt=""/>
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" align="center">
                   <img src={contact} className="imgfirstpage" alt=""/>
                 </div>
               </div>
