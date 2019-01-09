@@ -33,14 +33,14 @@ const photos = [
     height: 5
   },
   {
-    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-    width: 4,
+    src: "./images/playa.jpg",
+    width: 5,
     height: 3
   },
   {
-    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
+    src: "./images/kayak.jpg",
     width: 3,
-    height: 4
+    height: 5
   },
   {
     src: "https://source.unsplash.com/PpOHJezOalU/800x599",
