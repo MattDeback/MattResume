@@ -1,34 +1,36 @@
 import React from 'react';
 import Gallery from "react-photo-gallery";
+import Lightbox from 'react-images';
 import './travel.css';
 
 import Navbar from "../navbar/Navbar";
 
+
 const photos = [
+  {
+    src: "./images/time.jpg",
+    width: 2,
+    height: 3
+  },
+  {
+    src: "./images/ski.jpg",
+    width: 5,
+    height: 3
+  },
   {
     src: "./images/NY.jpg",
     width: 4,
     height: 3
   },
   {
-    src: "./images/time.jpg",
-    width: 1,
-    height: 1
+    src: "./images/forrest.jpg",
+    width: 3,
+    height: 5
   },
   {
-    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+    src: "./images/mainsquare.jpg",
     width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-    width: 3,
-    height: 4
+    height: 5
   },
   {
     src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
@@ -87,26 +89,59 @@ const photos = [
   }
 ];
 
+console.log(photos);
+
 
 
 class Travel extends React.Component {
+  constructor() {
+    super();
+    this.state = { currentImage: 0 };
+    this.closeLightbox = this.closeLightbox.bind(this);
+    this.openLightbox = this.openLightbox.bind(this);
+    this.gotoNext = this.gotoNext.bind(this);
+    this.gotoPrevious = this.gotoPrevious.bind(this);
+  }
+  openLightbox(event, obj) {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true,
+    });
+  }
+  closeLightbox() {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  }
+  gotoPrevious() {
+    this.setState({
+      currentImage: this.state.currentImage - 1,
+    });
+  }
+  gotoNext() {
+    this.setState({
+      currentImage: this.state.currentImage + 1,
+    });
+  }
   render() {
     return (
-
       <div>
-
-        <div class="snow">&nbsp;</div>
-        <div class="snow2">&nbsp;</div>
-        <div class="fill">
+        <div className="snow">&nbsp;</div>
+        <div className="snow2">&nbsp;</div>
+        <div className="fill">
           <Navbar />
-
-          <Gallery photos={photos} direction={"column"} />
-
-
+            <Gallery photos={photos} onClick={this.openLightbox} />
+            <Lightbox images={photos}
+              onClose={this.closeLightbox}
+              onClickPrev={this.gotoPrevious}
+              onClickNext={this.gotoNext}
+              currentImage={this.state.currentImage}
+              isOpen={this.state.lightboxIsOpen}
+            />
         </div>
       </div>
-
-    );
+    )
   }
 }
 
