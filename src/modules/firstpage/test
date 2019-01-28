@@ -1,0 +1,96 @@
+const request = require("request");
+
+getWeather(city) {
+    request(
+      {
+        url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`,
+
+        method: "GET"
+      },
+
+      function(error, response, result) {
+        const weather = JSON.parse(result);
+        console.log(`${weather.main.temp}°C`);
+        console.log(weather.main.humidity);
+        console.log(weather);
+        return weather.main.temp;
+      }
+    );
+  }
+
+
+  const temp = getWeather('lille')
+
+
+
+
+import React, { Component } from 'react';
+import './App.css';
+import Title from './Title.js'
+
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Title />
+        <Counter name='Matt' month="May"/>
+      </div>
+    );
+  }
+}
+
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      rdv: 'biere'
+    }
+  }
+
+
+  plusOne() {
+    this.setState(
+      (prevState)=> {
+        return {count: prevState.count +1}
+      }
+    )
+  }
+
+  minusOne() {
+    this.setState(
+      (prevState)=> {
+        return {count: prevState.count -1}
+      }
+    )
+  }
+
+  Reset() {
+    this.setState(
+      {count: 0}
+    )
+  }
+
+
+  render() {
+    return (
+      <div className='Border'>
+        <h5> Hello {this.props.name} </h5>
+        <h6> The current month is {this.props.month}</h6>
+        <button className='Button' onClick={()=>this.plusOne()}>+</button>
+        <p>{this.state.count}</p>
+        <button className='Button' onClick={()=>this.minusOne()}>-</button>
+        <hr />
+        <button className='Button' onClick={()=> this.Reset()}>Set To ZER0</button>
+      </div>
+    )
+  }
+}
+
+
+
+
+
+export default App;

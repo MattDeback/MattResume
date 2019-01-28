@@ -6,6 +6,7 @@ import './App.css';
 import Firstpage from "./modules/firstpage/Firstpage";
 import Navbar from "./modules/navbar/Navbar";
 import Travel from "./modules/travel/Travel";
+import Meteo from "./modules/meteo/Meteo";
 
 
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Route exact path="/" component={Firstpage} />
           <Route path="/navbar" component={Navbar} />
           <Route path="/travel" component={Travel} />
+          <Route path="/meteo" component={Meteo} />
         </div>
       </Router>
     );
