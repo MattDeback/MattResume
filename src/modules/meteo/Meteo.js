@@ -1,67 +1,82 @@
+/**
+ * 
+ */
+
 import React from 'react';
 import './meteo.css';
 
-
-const request = require("request");
-
-
-
-
+/**
+ * 
+ */
 class Meteo extends React.Component {
+
+  /**
+   * 
+   * @param {*} props 
+   */
   constructor(props) {
     super(props);
     this.state = {
-      degree: 0
+      city: 'lille',
+      degree: '-',
+      weather: ''
     }
   }
 
-temperature () {
-this.setState({degree: 6})
-}
+  /**
+   * 
+   */
+  componentDidMount() {
+    this.getWeather(this.state.city);
+  }
 
-handleclick () {
-const a = this.getWeather('mexico')
-this.setState({degree: a})
-}
+  /**
+   * 
+   * @param {*} city 
+   */
+  handleclick(city) {
+    this.getWeather(city);
+  }
 
-test () {
-  console.log(10)
-}
+  /**
+   * 
+   * @param {*} city 
+   */
+  getWeather(city) {
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`)
+      .then(result => result.json())
+      .then(result => {
+                        console.log(result); 
+                        this.setState({
+                          city: result.name,
+                          degree: result.main.temp,
+                          weather: result.weather[result.weather.length-1].description
+                        })
+                      });
+  }
 
-
-getWeather(city) {
-  request(
-    {
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`,
-
-      method: "GET"
-    },
-
-    function(error, response, result) {
-      const weather = JSON.parse(result);
-      console.log(`${weather.main.temp}°C`);
-      // this.setState({degree: weather.main.temp});
-      // return weather.main.temp
-    }
-  );
-}
-
-
+  /**
+   * 
+   */
   render() {
-
-
-
+    const city    = this.state.city;
+    const degree  = this.state.degree;
+    const weather  = this.state.weather;
+    
     return (
       <div>
-      la temperature a Moscou est de {this.getWeather('moscow')}
-        <h5> A lille, la meteo est de {this.state.degree}</h5>
-        <button onClick={()=> this.handleclick()}>temperature a lille</button>
-        <button onClick={()=> this.temperature()}>temperature a lille +2</button>
-        <p>a mexico il fait {this.a}</p>
+        <h1>City : {city}</h1>
+        <ul>
+          <li>Weather : {weather}</li>
+          <li>Temp : {degree}°C</li>
+        </ul>
+        <button onClick={()=> this.handleclick('lille')}>Lille</button>
+        <button onClick={()=> this.handleclick('london')}>London</button>
+        <button onClick={()=> this.handleclick('moscow')}>Moscow</button>
+        <button onClick={()=> this.handleclick('tokyo')}>Tokyo</button>
       </div>
     )
   }
 }
-
 
 export default Meteo;
