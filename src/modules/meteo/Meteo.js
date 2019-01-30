@@ -82,6 +82,7 @@ class Meteo extends React.Component {
         <button onClick={()=> this.handleclick('autrans,fr')}>Autrans</button>
         <button onClick={()=> this.handleclick('bethune,fr')}>Bethune</button>
         <button onClick={()=> this.handleclick('rang-du-fliers,fr')}>Rang-du-Fliers</button>
+        <button onClick={()=> this.handleclick('fontenay-sous-bois,fr')}>FSB</button>
         </div>
       </div>
     )
