@@ -1,5 +1,5 @@
 /**
- *
+ * Merci à Christophe le bug fixer
  */
 
 import React from 'react';
@@ -66,19 +66,23 @@ class Meteo extends React.Component {
 
     return (
       <div>
+      <div className="snow">&nbsp;</div>
+      <div className="snow2">&nbsp;</div>
+      <div className="fill">
         <Navbar />
         <br/>
         <br/>
         <br/>
-        <h1>City : {city}</h1>
+        <h1 className='textmeteo'>City : {city}</h1>
         <ul>
-          <li>Weather : {weather}</li>
-          <li>Temp : {degree}°C</li>
+          <li className='textmeteo'>Weather : {weather}</li>
+          <li className='textmeteo'>Temp : {degree}°C</li>
         </ul>
-        <button onClick={()=> this.handleclick('lille')}>Lille</button>
-        <button onClick={()=> this.handleclick('london')}>London</button>
-        <button onClick={()=> this.handleclick('moscow')}>Moscow</button>
-        <button onClick={()=> this.handleclick('tokyo')}>Tokyo</button>
+        <button onClick={()=> this.handleclick('steenbecque,fr')}>Steenbecque</button>
+        <button onClick={()=> this.handleclick('autrans,fr')}>Autrans</button>
+        <button onClick={()=> this.handleclick('bethune,fr')}>Bethune</button>
+        <button onClick={()=> this.handleclick('rang-du-fliers,fr')}>Rang-du-Fliers</button>
+        </div>
       </div>
     )
   }
