@@ -1,18 +1,19 @@
 /**
- * 
+ *
  */
 
 import React from 'react';
 import './meteo.css';
+import Navbar from "../navbar/Navbar";
 
 /**
- * 
+ *
  */
 class Meteo extends React.Component {
 
   /**
-   * 
-   * @param {*} props 
+   *
+   * @param {*} props
    */
   constructor(props) {
     super(props);
@@ -24,29 +25,29 @@ class Meteo extends React.Component {
   }
 
   /**
-   * 
+   *
    */
   componentDidMount() {
     this.getWeather(this.state.city);
   }
 
   /**
-   * 
-   * @param {*} city 
+   *
+   * @param {*} city
    */
   handleclick(city) {
     this.getWeather(city);
   }
 
   /**
-   * 
-   * @param {*} city 
+   *
+   * @param {*} city
    */
   getWeather(city) {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`)
       .then(result => result.json())
       .then(result => {
-                        console.log(result); 
+                        console.log(result);
                         this.setState({
                           city: result.name,
                           degree: result.main.temp,
@@ -56,15 +57,19 @@ class Meteo extends React.Component {
   }
 
   /**
-   * 
+   *
    */
   render() {
     const city    = this.state.city;
     const degree  = this.state.degree;
     const weather  = this.state.weather;
-    
+
     return (
       <div>
+        <Navbar />
+        <br/>
+        <br/>
+        <br/>
         <h1>City : {city}</h1>
         <ul>
           <li>Weather : {weather}</li>
