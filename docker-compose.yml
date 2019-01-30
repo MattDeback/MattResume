@@ -1,0 +1,62 @@
+version: "2"
+
+services:
+    web:
+        build: ./docker/
+        container_name: matt-website
+        restart: always
+        links:
+            - database
+        ports:
+            - 3000:3000
+        user: "node"
+        working_dir: /home/node/app
+        environment:
+            - NODE_ENV=production
+        volumes:
+            - ./:/home/node/app
+        expose:
+            - "3000"
+        command: "npm start"
+
+    database:
+        container_name: matt-database
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: rootpwd
+            MYSQL_DATABASE: matt
+            MYSQL_USER: user
+            MYSQL_PASSWORD: pwd
+
+    phpmyadmin:
+        container_name: matt-phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        links:
+            - database:db
+        ports:
+            - 4243:80
+
+    adminer:
+        container_name: matt-adminer
+        image: adminer:4
+        restart: always
+        ports:
+            - 4244:8080
+
+    redis:
+        container_name: matt-redis
+        image: redis:5
+        hostname: redis
+        restart: always
+
+    redis-commander:
+        container_name: matt-redis-commander
+        hostname: redis-commander
+        image: rediscommander/redis-commander:latest
+        restart: always
+        environment:
+            - REDIS_HOSTS=local:redis:6379
+        ports:
+            - 4245:8081
