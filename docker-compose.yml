@@ -21,22 +21,12 @@ services:
 
     database:
         container_name: matt-database
-        image: mysql:5.7
+        image: postgres:11
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: rootpwd
-            MYSQL_DATABASE: matt
-            MYSQL_USER: user
-            MYSQL_PASSWORD: pwd
-
-    phpmyadmin:
-        container_name: matt-phpmyadmin
-        image: phpmyadmin/phpmyadmin
-        restart: always
-        links:
-            - database:db
-        ports:
-            - 4243:80
+            POSTGRES_DB: matt
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: pwd
 
     adminer:
         container_name: matt-adminer
