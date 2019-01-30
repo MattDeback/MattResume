@@ -44,7 +44,7 @@ class Meteo extends React.Component {
    * @param {*} city
    */
   getWeather(city) {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=1a732d58cdcd372ec213ec6c8cda05a1`)
       .then(result => result.json())
       .then(result => {
                         console.log(result);
